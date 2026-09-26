@@ -1,0 +1,1 @@
+ALTER TABLE "cases" ADD COLUMN "next_of_kin_relation" varchar(100);

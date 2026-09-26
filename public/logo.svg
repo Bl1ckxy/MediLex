@@ -1,0 +1,60 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 450 120" width="100%" height="100%">
+  <defs>
+    <!-- Background Gradient for Icon -->
+    <linearGradient id="iconGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#253457" />
+      <stop offset="100%" stop-color="#0F172A" />
+    </linearGradient>
+    
+    <!-- Gold/Amber Accent Gradient (matching dashboard gavel/accents) -->
+    <linearGradient id="goldGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#E2C97E" />
+      <stop offset="100%" stop-color="#C5A059" />
+    </linearGradient>
+  </defs>
+
+  <!-- Optional dark background container to match the MediLex app theme -->
+  <rect width="100%" height="100%" fill="#080D1A" rx="12" />
+
+  <!-- LOGO ICON MARK -->
+  <g transform="translate(20, 20)">
+    <!-- Outer Shield / Container -->
+    <rect x="0" y="0" width="80" height="80" rx="16" fill="url(#iconGrad)" stroke="#1E293B" stroke-width="2" />
+    
+    <!-- Stylized Balance Scales / Medical Cross Hybrid -->
+    <!-- Central Pillar -->
+    <rect x="38" y="18" width="4" height="44" rx="2" fill="url(#goldGrad)" />
+    
+    <!-- Top Beam -->
+    <rect x="22" y="24" width="36" height="4" rx="2" fill="url(#goldGrad)" />
+    
+    <!-- Center Top Ring -->
+    <circle cx="40" cy="20" r="3" fill="none" stroke="url(#goldGrad)" stroke-width="2" />
+
+    <!-- Left Pan (Suspended Strings & Bowl) -->
+    <path d="M 24 28 L 18 48 C 18 48 24 50 30 48 Z" fill="url(#goldGrad)" opacity="0.9" />
+    <line x1="24" y1="28" x2="18" y2="48" stroke="url(#goldGrad)" stroke-width="1.5" />
+    <line x1="24" y1="28" x2="30" y2="48" stroke="url(#goldGrad)" stroke-width="1.5" />
+
+    <!-- Right Pan (Suspended Strings & Bowl) -->
+    <path d="M 56 28 L 50 48 C 50 48 56 50 62 48 Z" fill="url(#goldGrad)" opacity="0.9" />
+    <line x1="56" y1="28" x2="50" y2="48" stroke="url(#goldGrad)" stroke-width="1.5" />
+    <line x1="56" y1="28" x2="62" y2="48" stroke="url(#goldGrad)" stroke-width="1.5" />
+
+    <!-- Base Stand -->
+    <path d="M 30 66 L 50 66 C 52 66 52 62 50 62 L 30 62 C 28 62 28 66 30 66 Z" fill="url(#goldGrad)" />
+    
+    <!-- Subtle Medical Cross Accent behind the scale center -->
+    <rect x="38" y="32" width="4" height="16" fill="#0F172A" opacity="0.4" />
+    <rect x="32" y="38" width="16" height="4" fill="#0F172A" opacity="0.4" />
+  </g>
+
+  <!-- TYPOGRAPHY / WORDMARK -->
+  <g transform="translate(118, 48)">
+    <!-- MediLex Brand Name -->
+    <text x="0" y="0" font-family="Georgia, Cambria, 'Times New Roman', serif" font-size="34" font-weight="bold" fill="#F8FAFC" letter-spacing="0.5">Medi<tspan fill="#E2C97E">Lex</tspan></text>
+    
+    <!-- Legal Intelligence Subtitle -->
+    <text x="2" y="22" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="10" font-weight="600" fill="#94A3B8" letter-spacing="3.5">LEGAL INTELLIGENCE</text>
+  </g>
+</svg>

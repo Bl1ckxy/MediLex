@@ -1,0 +1,285 @@
+/* Font imports must precede all other CSS rules. */
+@import '@fontsource/inter/400.css';
+@import '@fontsource/inter/500.css';
+@import '@fontsource/inter/600.css';
+@import '@fontsource/inter/700.css';
+@import '@fontsource/lora/400.css';
+@import '@fontsource/lora/500.css';
+@import '@fontsource/lora/600.css';
+@import '@fontsource/lora/700.css';
+@import '@fontsource/lora/400-italic.css';
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ======================================================================== */
+/* MediLex â€” Brand CSS Custom Properties                                  */
+/* ======================================================================== */
+
+@layer base {
+    :root {
+        /* Brand palette */
+        --navy: 219 56% 13%;        /* #0F1B35 */
+        --ivory: 36 43% 93%;        /* #F5F0E8 */
+        --gold: 38 54% 50%;         /* #C49A3C */
+        --crimson: 6 63% 46%;        /* #C0392B */
+        --slate-brand: 220 38% 93%; /* #E8EDF5 */
+
+        /* shadcn/ui semantic tokens mapped to MediLex palette */
+        --background: 36 43% 93%;         /* ivory */
+        --foreground: 219 56% 13%;        /* navy */
+
+        --card: 0 0% 100%;
+        --card-foreground: 219 56% 13%;
+
+        --popover: 0 0% 100%;
+        --popover-foreground: 219 56% 13%;
+
+        --primary: 219 56% 13%;           /* navy */
+        --primary-foreground: 36 43% 93%; /* ivory */
+
+        --secondary: 220 38% 93%;        /* slate */
+        --secondary-foreground: 219 56% 13%;
+
+        --muted: 220 38% 93%;
+        --muted-foreground: 219 20% 46%;
+
+        --accent: 38 54% 50%;             /* gold */
+        --accent-foreground: 219 56% 13%;
+
+        --destructive: 6 63% 46%;        /* crimson */
+        --destructive-foreground: 0 0% 100%;
+
+        --border: 220 20% 82%;
+        --input: 220 20% 82%;
+        --ring: 38 54% 50%;               /* gold ring */
+
+        --radius: 0.5rem; /* 8px max corners */
+    }
+
+    /* Dark mode â€” reserved for future use */
+    .dark {
+        --background: 219 56% 13%;
+        --foreground: 36 43% 93%;
+
+        --card: 219 50% 18%;
+        --card-foreground: 36 43% 93%;
+
+        --popover: 219 50% 18%;
+        --popover-foreground: 36 43% 93%;
+
+        --primary: 38 54% 50%;
+        --primary-foreground: 219 56% 13%;
+
+        --secondary: 219 40% 22%;
+        --secondary-foreground: 36 43% 93%;
+
+        --muted: 219 40% 22%;
+        --muted-foreground: 220 20% 65%;
+
+        --accent: 38 54% 50%;
+        --accent-foreground: 219 56% 13%;
+
+        --destructive: 6 63% 46%;
+        --destructive-foreground: 0 0% 100%;
+
+        --border: 219 40% 28%;
+        --input: 219 40% 28%;
+        --ring: 38 54% 50%;
+    }
+
+    .dark body {
+        background: #0b1224;
+        color: #f5f0e8;
+    }
+
+    .dark .bg-\[\#f7f8fb\] {
+        background-color: #0b1224;
+    }
+
+    .dark .bg-white {
+        background-color: #121d35;
+    }
+
+    .dark .bg-slate-50,
+    .dark .bg-slate-50\/70 {
+        background-color: #17233d;
+    }
+
+    .dark .border-slate-100,
+    .dark .border-slate-200,
+    .dark .border-slate-200\/80 {
+        border-color: #263653;
+    }
+
+    .dark .text-navy {
+        color: #f5f0e8;
+    }
+
+    .dark .text-slate-400 {
+        color: #9aa9c4;
+    }
+
+    .dark .text-slate-500,
+    .dark .text-slate-600,
+    .dark .text-slate-700 {
+        color: #c0cadd;
+    }
+
+    .dark input,
+    .dark select {
+        background-color: #17233d;
+        border-color: #344666;
+        color: #f5f0e8;
+    }
+
+    .dark input::placeholder {
+        color: #8090ac;
+    }
+
+    .dark .hover\:bg-slate-50:hover,
+    .dark .hover\:bg-slate-50\/70:hover,
+    .dark .hover\:bg-slate-100:hover {
+        background-color: #1d2b48;
+    }
+}
+
+/* ======================================================================== */
+/* Base styles                                                              */
+/* ======================================================================== */
+
+@layer base {
+    * {
+        @apply border-border;
+    }
+
+    body {
+        @apply bg-background text-foreground font-sans antialiased;
+        font-feature-settings: 'cv02', 'cv03', 'cv04', 'cv11';
+        overflow-x: hidden;
+    }
+
+    /* Scrollbar styling */
+    ::-webkit-scrollbar {
+        width: 8px;
+        height: 8px;
+    }
+
+    ::-webkit-scrollbar-track {
+        background: hsl(var(--muted));
+        border-radius: 4px;
+    }
+
+    ::-webkit-scrollbar-thumb {
+        background: hsl(var(--muted-foreground) / 0.3);
+        border-radius: 4px;
+    }
+
+    ::-webkit-scrollbar-thumb:hover {
+        background: hsl(var(--muted-foreground) / 0.5);
+    }
+
+    /* Selection highlight */
+    ::selection {
+        background: hsl(var(--gold) / 0.3);
+        color: hsl(var(--foreground));
+    }
+}
+
+/* ======================================================================== */
+/* Legal document preview styles                                            */
+/* ======================================================================== */
+
+@layer components {
+    .legal-prose {
+        font-family: 'Lora', serif;
+        line-height: 1.8;
+        font-size: 1rem;
+        color: hsl(var(--foreground));
+    }
+
+    .legal-prose h1,
+    .legal-prose h2,
+    .legal-prose h3 {
+        font-family: 'Lora', serif;
+        font-weight: 600;
+        margin-top: 1.5em;
+        margin-bottom: 0.5em;
+    }
+
+    .legal-prose h1 {
+        font-size: 1.5rem;
+        text-align: center;
+        text-transform: uppercase;
+        letter-spacing: 0.05em;
+    }
+
+    .legal-prose h2 {
+        font-size: 1.25rem;
+        border-bottom: 1px solid hsl(var(--border));
+        padding-bottom: 0.25em;
+    }
+
+    .legal-prose h3 {
+        font-size: 1.125rem;
+    }
+
+    .legal-prose p {
+        margin-bottom: 1em;
+        text-align: justify;
+    }
+
+    .legal-prose blockquote {
+        border-left: 3px solid hsl(var(--gold));
+        padding-left: 1em;
+        margin: 1em 0;
+        font-style: italic;
+        color: hsl(var(--muted-foreground));
+    }
+
+    .legal-prose ol {
+        list-style-type: lower-roman;
+        padding-left: 2em;
+        margin-bottom: 1em;
+    }
+
+    .legal-prose ul {
+        list-style-type: disc;
+        padding-left: 2em;
+        margin-bottom: 1em;
+    }
+
+    .legal-prose table {
+        width: 100%;
+        border-collapse: collapse;
+        margin: 1em 0;
+    }
+
+    .legal-prose th,
+    .legal-prose td {
+        border: 1px solid hsl(var(--border));
+        padding: 0.5em 0.75em;
+        text-align: left;
+    }
+
+    .legal-prose th {
+        background: hsl(var(--muted));
+        font-weight: 600;
+    }
+
+    /* Emphasis for case citations */
+    .legal-prose .case-citation {
+        font-style: italic;
+        text-decoration: underline;
+        text-decoration-color: hsl(var(--gold));
+        text-underline-offset: 3px;
+    }
+
+    /* Section numbering for legal documents */
+    .legal-prose .section-number {
+        font-weight: 700;
+        margin-right: 0.5em;
+    }
+}
+/* âœ“ FILE COMPLETE â€” src/app/globals.css */
